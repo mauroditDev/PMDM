@@ -31,12 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         listaOpciones.setAdapter(adaptador);
 
-        listaOpciones.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
-            }
-        });
 
     }
 }

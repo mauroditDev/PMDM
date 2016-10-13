@@ -31,8 +31,6 @@ public class AdaptadorOpciones extends ArrayAdapter<Opcion> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent)
     {
-
-
         View item = convertView;
         ViewHolder holder;
         if(item==null) {
@@ -41,6 +39,7 @@ public class AdaptadorOpciones extends ArrayAdapter<Opcion> {
 
             holder = new ViewHolder();
             holder.imagen = (ImageView) item.findViewById(R.id.imagen);
+            holder.imagen.setImageResource(datos[position].getImagen());
             holder.nombre = (TextView) item.findViewById(R.id.titulo);
             holder.chk = (CheckBox) item.findViewById(R.id.chkbx);
             item.setTag(holder);
@@ -50,11 +49,8 @@ public class AdaptadorOpciones extends ArrayAdapter<Opcion> {
             holder = (ViewHolder)item.getTag();
         }
 
-
-
         //Mediante getItem cargamos cada uno de los objetos del array
-        Opcion mielemento=getItem(position);
-
+        Opcion mielemento = getItem(position);
 
         holder.nombre.setText(mielemento.getNombre());
         holder.imagen.setImageResource(mielemento.getImagen());
