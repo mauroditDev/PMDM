@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="texto_base">Select your favorite sports from the list and then press the OK button</string>
+    <string name="button_text">ok</string>
+    <string name="basket">Basketball</string>
+    <string name="futbol">Soccer</string>
+    <string name="moto">Motorcicles</string>
+    <string name="pingpong">Ping-Pong</string>
+    <string name="golf">Golf</string>
+    <string name="atletismo">Athletism</string>
+    <string name="natacion">Swimming</string>
+
+</resources>

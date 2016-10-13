@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MilesToKm</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="toast">Por favor introduce texto</string>
+</resources>

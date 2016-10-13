@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AdivinaNum</string>
+    <string name="textoInicial">He pensado un numero entre 1 y 100\n adivina cual!</string>
+    <string name="textoMayor">¿%1$d? Uy! He pensado un numero mayor</string>
+    <string name="textoMenor">¿%1$d? Uy! He pensado un numero menor</string>
+    <string name="textoGenar">Exacto! en solo %1$d intentos!</string>
+    <string name="botonTry">Probar</string>
+    <string name="intentos">Llevas %1$d intentos</string>
+    <string name="botonRestart">Jugar otra vez</string>
+</resources>

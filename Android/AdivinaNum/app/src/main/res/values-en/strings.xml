@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GuessNum</string>
+    <string name="textoInicial">I thought of a number between 1 and 100\n guess which one!</string>
+    <string name="textoMayor">%1$d? Oops! I thought of a bigger number</string>
+    <string name="textoMenor">%1$d? Oops! I thought of a smaller number</string>
+    <string name="textoGenar">That\'s the one! it only took %1$d trys!</string>
+    <string name="botonTry">Try</string>
+    <string name="intentos">%1$d trys</string>
+    <string name="botonRestart">Play again</string>
+</resources>
