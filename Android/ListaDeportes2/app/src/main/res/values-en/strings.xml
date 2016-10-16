@@ -9,5 +9,8 @@
     <string name="golf">Golf</string>
     <string name="atletismo">Athletism</string>
     <string name="natacion">Swimming</string>
+    <string name="inicio_texto">You have selected:</string>
+    <string name="and">and</string>
+    <string name="nadaSel">You have selected no item</string>
 
 </resources>

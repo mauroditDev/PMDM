@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="texto_base">Selecciona tus deportes favoritos y luego pulsa en Aceptar!</string>
     <string name="button_text">aceptar</string>
     <string name="basket">Baloncesto</string>
@@ -9,5 +10,8 @@
     <string name="golf">Golf</string>
     <string name="atletismo">Atletismo</string>
     <string name="natacion">Natación</string>
+    <string name="inicio_texto">Has seleccionado:</string>
+    <string name="and">y</string>
+    <string name="nadaSel">No ha seleccionado ningún item</string>
 
 </resources>
