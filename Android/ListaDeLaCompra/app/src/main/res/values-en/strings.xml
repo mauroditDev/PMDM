@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="titulo">Buying List</string>
+    <string name="subtitulo">Long click on an item for editing or delete.\n
+        You can also use the menu to add a new item</string>
+    <string name="menu_titulo">Add Element</string>
+</resources>
