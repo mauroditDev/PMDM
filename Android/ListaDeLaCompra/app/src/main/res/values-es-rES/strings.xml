@@ -1,2 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="titulo">Lista de la Compra</string>
+    <string name="subtitulo">Pulsa un rato en un artículo para modificarlo o eliminarlo.\n
+        También usa el menú para agregar un artículo nuevo.</string>
+    <string name="menu_titulo">Añadir artículo</string>
+    <string name="alta">Nuevo Artículo</string>
+    <string name="nombrar">Inserta el nombre del elemento</string>
+    <string name="modif">Modificar Artículo</string>
+    <string name="ex1">Pan</string>
+    <string name="ex2">Leche</string>
+    <string name="ex3">Periódico</string>
+    <string name="borrar">Borrar Artículo</string>
+    <string name="seguro">¿Está seguro?</string>
+</resources>

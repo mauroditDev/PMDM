@@ -4,5 +4,5 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity">
     <item android:id="@+id/MenuAdd" android:title="@string/menu_titulo"
-        android:icon="@drawable/" app:showAsAction="ifRoom|withText"/>
+        android:icon="@drawable/plus" app:showAsAction="ifRoom|withText"/>
 </menu>

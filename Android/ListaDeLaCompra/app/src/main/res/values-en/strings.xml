@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="titulo">Buying List</string>
+    <string name="titulo">Shopping List</string>
     <string name="subtitulo">Long click on an item for editing or delete.\n
         You can also use the menu to add a new item</string>
     <string name="menu_titulo">Add Element</string>
+    <string name="alta">New Element</string>
+    <string name="nombrar">Insert elements name</string>
+    <string name="modif">Modify Element</string>
+    <string name="ex1">Bread</string>
+    <string name="ex2">Milk</string>
+    <string name="ex3">Newspaper</string>
+    <string name="borrar">Erase Element</string>
+    <string name="seguro">Are you sure?</string>
 </resources>
