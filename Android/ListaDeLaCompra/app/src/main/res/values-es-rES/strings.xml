@@ -12,4 +12,6 @@
     <string name="ex3">Periódico</string>
     <string name="borrar">Borrar Artículo</string>
     <string name="seguro">¿Está seguro?</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="cancelar">Cancelar</string>
 </resources>

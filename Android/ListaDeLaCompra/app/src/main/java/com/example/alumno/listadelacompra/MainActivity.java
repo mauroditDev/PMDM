@@ -9,12 +9,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+        implements NuevoDFragment.ShareDialogListener, EditDFragment.ShareDialogListener{
 
     private ListView listadoPrincipal;
     // Definimos el adaptador que va a usar el ListView
@@ -61,6 +61,24 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        switch (item.getItemId()) {
+            case R.id.MenuAdd:
+                NuevoDFragment dialog = new NuevoDFragment();
+                dialog.show(fm, "NuevoDFragment");
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+
     @Override
     // Método donde definimos el menú contextual cuando se despliega
     public void onCreateContextMenu(ContextMenu menu, View v,
@@ -94,14 +112,23 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
 
-            // Se selecciona la opción "Editar texto opción" de menú contextual de la etiqueta
+            // Se selecciona la opción "Borrar Elemento" de menú contextual de la etiqueta
             case R.id.borrar:
                 //TODO: (opcional) sacar el cartel de "seguro que desea borrar?"
-                //TODO: que borre
+                datos.remove(info.position);
+                adaptadorArticulo.notifyDataSetChanged();
                 return true;
-            // Se selecciona la opción "Reiniciar texto opción" de menú contextual de la etiqueta
+
+            // Se selecciona la opción "Editar elemento" de menú contextual de la etiqueta
             case R.id.editar:
-                //TODO: sacar el cartel para que lea y reciba un bundle
+                String nombreaeditar=datos.get(info.position).getNombre();
+                EditDFragment editarDFragment= new EditDFragment();
+                Bundle bundle = new Bundle(2);
+                bundle.putString("nombreaeditar", nombreaeditar);
+                bundle.putInt("posicion", info.position);
+                editarDFragment.setArguments(bundle);
+                editarDFragment.show(fm, "NuevoDFragment");
+
                 return true;
             default:
                 return super.onContextItemSelected(item);
@@ -110,17 +137,21 @@ public class MainActivity extends AppCompatActivity {
 
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        switch (item.getItemId()) {
-            case R.id.MenuAdd:
-                //TODO: acción añadir
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
+    public void onDialogPositiveClick(
+            android.support.v4.app.DialogFragment dialog,String newName) {
+        datos.add(new Articulo(newName,false));
+        adaptadorArticulo.notifyDataSetChanged();
     }
 
+    @Override
+    public void onDialogPositiveClick(
+            android.support.v4.app.DialogFragment dialog,String newName, int position) {
+        datos.get(position).setNombre(newName);
+        adaptadorArticulo.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onDialogNegativeClick(android.support.v4.app.DialogFragment dialog) {
+
+    }
 }

@@ -12,4 +12,6 @@
     <string name="ex3">Newspaper</string>
     <string name="borrar">Erase Element</string>
     <string name="seguro">Are you sure?</string>
+    <string name="aceptar">OK</string>
+    <string name="cancelar">Cancel</string>
 </resources>
