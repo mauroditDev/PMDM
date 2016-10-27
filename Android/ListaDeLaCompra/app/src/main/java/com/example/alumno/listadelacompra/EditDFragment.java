@@ -48,6 +48,7 @@ public class EditDFragment extends DialogFragment {
 
         final EditText texto = (EditText) v.findViewById(R.id.textoIntroducido);
         texto.setText(getArguments().getString("nombreaeditar"));
+        texto.selectAll();
 
         builder.setView(v)
                 .setTitle(R.string.alta)

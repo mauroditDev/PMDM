@@ -45,6 +45,7 @@ public class NuevoDFragment extends DialogFragment {
         View v = inflater.inflate(R.layout.dialog_share, null);
 
         final EditText texto = (EditText) v.findViewById(R.id.textoIntroducido);
+        texto.selectAll();
 
         builder.setView(v)
                 .setTitle(R.string.alta)

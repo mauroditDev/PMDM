@@ -38,6 +38,9 @@ public class MainActivity extends AppCompatActivity
             datos.add(new Articulo(getResources().getString(R.string.ex2),false));
             datos.add(new Articulo(getResources().getString(R.string.ex3),false));
         }
+        else{
+            datos = savedInstanceState.getParcelableArrayList(STATE_DATOS);
+        }
 
         adaptadorArticulo = new AdaptadorArticulo(this,datos);
         listadoPrincipal.setAdapter(adaptadorArticulo);
@@ -154,4 +157,15 @@ public class MainActivity extends AppCompatActivity
     public void onDialogNegativeClick(android.support.v4.app.DialogFragment dialog) {
 
     }
+
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+
+        savedInstanceState.putParcelableArrayList(STATE_DATOS,datos);
+
+        // Always call the superclass so it can save the view hierarchy state
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+    private final String STATE_DATOS = "estadoDatos";
+
 }
