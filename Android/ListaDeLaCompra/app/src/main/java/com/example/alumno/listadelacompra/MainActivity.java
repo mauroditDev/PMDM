@@ -1,5 +1,6 @@
 package com.example.alumno.listadelacompra;
 
+import android.content.Context;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -31,6 +33,8 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final Context context = this.getApplicationContext();
+
         listadoPrincipal = (ListView) findViewById(R.id.lista);
 
         if(savedInstanceState == null){
@@ -50,6 +54,10 @@ public class MainActivity extends AppCompatActivity
                 ((Articulo)a.getItemAtPosition(position)).
                         setComprado(!((Articulo) a.getItemAtPosition(position)).isComprado());
                 adaptadorArticulo.notifyDataSetChanged();
+                if(((Articulo) a.getItemAtPosition(position)).isComprado())
+                    Toast.makeText(context,getResources().getString(R.string.comprado)+" "+
+                            ((Articulo) a.getItemAtPosition(position)).getNombre(),
+                            Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -142,15 +150,24 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onDialogPositiveClick(
             android.support.v4.app.DialogFragment dialog,String newName) {
-        datos.add(new Articulo(newName,false));
-        adaptadorArticulo.notifyDataSetChanged();
+        if(newName.length()>0 && !newName.equals(getResources().getString(R.string.nombrar))){
+            datos.add(new Articulo(newName,false));
+            adaptadorArticulo.notifyDataSetChanged();
+        }
+        else
+            Toast.makeText(this,getResources().getString(R.string.nombrenovalido),Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void onDialogPositiveClick(
             android.support.v4.app.DialogFragment dialog,String newName, int position) {
-        datos.get(position).setNombre(newName);
-        adaptadorArticulo.notifyDataSetChanged();
+        if(newName.length()>0 && !newName.equals(getResources().getString(R.string.nombrar))){
+            datos.get(position).setNombre(newName);
+            adaptadorArticulo.notifyDataSetChanged();
+        }
+        else
+            Toast.makeText(this,getResources().getString(R.string.nombrenovalido),Toast.LENGTH_LONG).show();
+
     }
 
     @Override

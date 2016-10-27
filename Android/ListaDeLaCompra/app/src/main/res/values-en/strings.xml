@@ -14,4 +14,6 @@
     <string name="seguro">Are you sure?</string>
     <string name="aceptar">OK</string>
     <string name="cancelar">Cancel</string>
+    <string name="nombrenovalido">You need a name</string>
+    <string name="comprado">You have bought </string>
 </resources>

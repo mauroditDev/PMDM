@@ -14,4 +14,6 @@
     <string name="seguro">¿Está seguro?</string>
     <string name="aceptar">Aceptar</string>
     <string name="cancelar">Cancelar</string>
+    <string name="nombrenovalido">Necesita insertar un nombre</string>
+    <string name="comprado">Has Comprado </string>
 </resources>
