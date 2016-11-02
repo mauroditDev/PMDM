@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="main_text">Actividad principal. Presiona algún botón para iniciar la subactividad. Primero debes dar de alta un contacto.</string>
+    <string name="btn_alta">Alta de contacto</string>
+    <string name="btn_modificacion"> Modificar contacto</string>
+    <string name="title">Datos de Contacto</string>
+    <string name="nombre">Nombre: </string>
+    <string name="apell">Apellidos: </string>
+    <string name="toast_ok">Has dado de alta el contacto correctamente</string>
+    <string name="toast_cancel">Has salido de la subactividad sin pulsar Aceptar</string>
+    <string name="toast_nombre_inv">Valor inadmisible en campos</string>
+    <string name="sec_title_m">Modificar Contacto:</string>
+    <string name="sec_title_a">Alta de Contacto:</string>
+    <string name="sec_text">Inserte nombre y apellidos</string>
+    <string name="sec_btn_accept">Aceptar (finaliza esta subactividad)</string>
+
+</resources>

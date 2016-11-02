@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="main_text">Main Activity. Press any button to start Secondary. First you must sign a contact.</string>
+    <string name="btn_alta">Insert Contact</string>
+    <string name="btn_modificacion"> Modify Contact</string>
+    <string name="title">Data Contact</string>
+    <string name="nombre">Name: </string>
+    <string name="apell">Surname: </string>
+    <string name="toast_ok">Correctly added!</string>
+    <string name="toast_cancel">You exited without accepting</string>
+    <string name="toast_nombre_inv">Not admissible values</string>
+    <string name="sec_title_m">ModifY Contact:</string>
+    <string name="sec_title_a">New Contact:</string>
+    <string name="sec_text">Insert name and surname</string>
+    <string name="sec_btn_accept">OK (ends this activity)</string>
+</resources>

@@ -16,7 +16,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
-        implements NuevoDFragment.ShareDialogListener, EditDFragment.ShareDialogListener{
+        implements EditDFragment.ShareDialogListener{
 
     private ListView listadoPrincipal;
     // Definimos el adaptador que va a usar el ListView
@@ -81,8 +81,12 @@ public class MainActivity extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
             case R.id.MenuAdd:
-                NuevoDFragment dialog = new NuevoDFragment();
-                dialog.show(fm, "NuevoDFragment");
+                EditDFragment editarDFragment= new EditDFragment();
+                Bundle bundle = new Bundle(2);
+                bundle.putString("nombreaeditar", getResources().getString(R.string.nombrar));
+                bundle.putInt("posicion", -1);
+                editarDFragment.setArguments(bundle);
+                editarDFragment.show(fm, "NuevoDFragment");
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -146,23 +150,14 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-
-    @Override
-    public void onDialogPositiveClick(
-            android.support.v4.app.DialogFragment dialog,String newName) {
-        if(newName.length()>0 && !newName.equals(getResources().getString(R.string.nombrar))){
-            datos.add(new Articulo(newName,false));
-            adaptadorArticulo.notifyDataSetChanged();
-        }
-        else
-            Toast.makeText(this,getResources().getString(R.string.nombrenovalido),Toast.LENGTH_LONG).show();
-    }
-
     @Override
     public void onDialogPositiveClick(
             android.support.v4.app.DialogFragment dialog,String newName, int position) {
         if(newName.length()>0 && !newName.equals(getResources().getString(R.string.nombrar))){
-            datos.get(position).setNombre(newName);
+            if(position == -1)
+                datos.add(new Articulo(newName,false));
+            else
+                datos.get(position).setNombre(newName);
             adaptadorArticulo.notifyDataSetChanged();
         }
         else

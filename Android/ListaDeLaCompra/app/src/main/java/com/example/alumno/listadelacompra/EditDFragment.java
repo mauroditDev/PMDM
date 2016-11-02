@@ -56,8 +56,8 @@ public class EditDFragment extends DialogFragment {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
                         String name = texto.getText().toString();
-                        int position = getArguments().getInt("posicion");
-                        mListener.onDialogPositiveClick(EditDFragment.this, name, position);
+                        mListener.onDialogPositiveClick(
+                                EditDFragment.this, name, getArguments().getInt("posicion"));
                     }
                 })
                 .setNegativeButton(R.string.cancelar, new DialogInterface.OnClickListener() {
