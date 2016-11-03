@@ -48,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
         TextView ape = (TextView) findViewById(R.id.apellido);
         String apellido = ape.getText().toString();
         String nombre = nom.getText().toString();
-        apellido.replace(getResources().getString(R.string.apell),"");
-        nombre.replace(getResources().getString(R.string.nombre),"");
+        apellido = apellido.replace(getResources().getString(R.string.apell),"");
+        nombre = nombre.replace(getResources().getString(R.string.nombre),"");
         Intent i = new Intent(this, SecondaryActivity.class);
         i.putExtra("nombre", nombre);
         i.putExtra("apellido", apellido);
@@ -58,34 +58,46 @@ public class MainActivity extends AppCompatActivity {
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-        String nombre = getResources().getString(R.string.nombre)+data.getExtras().getString("nombre");
-        String apellido = getResources().getString(R.string.apell)+data.getExtras().getString("apellido");
 
-        TextView tvNombre = (TextView) findViewById(R.id.nombre);
-        TextView tvApellido = (TextView) findViewById(R.id.apellido);
 
         if(resultCode == RESULT_OK) {
-            tvNombre.setText(nombre);
-            tvApellido.setText(apellido);
 
-            Button btnAlta = (Button) findViewById(R.id.btn_alta);
-            Button btnMod = (Button) findViewById(R.id.btn_modificacion);
+            if(data.getExtras().getString("nombre").length()==0){
+                Toast.makeText(this,getResources().getString(R.string.toast_nombre_inv),
+                        Toast.LENGTH_SHORT).show();
+            }
+            else {
 
-            btnMod.setEnabled(true);
-            btnAlta.setEnabled(false);
+                String nombre = getResources().getString(R.string.nombre);
+                String apellido = getResources().getString(R.string.apell);
+
+                TextView tvNombre = (TextView) findViewById(R.id.nombre);
+                TextView tvApellido = (TextView) findViewById(R.id.apellido);
+
+                tvNombre.setText(nombre);
+                tvApellido.setText(apellido);
+
+                nombre += " " + data.getExtras().getString("nombre");
+                apellido += " " + data.getExtras().getString("apellido");
+
+                tvNombre.setText(nombre);
+                tvApellido.setText(apellido);
+
+                Button btnAlta = (Button) findViewById(R.id.btn_alta);
+                Button btnMod = (Button) findViewById(R.id.btn_modificacion);
+
+                btnMod.setEnabled(true);
+                btnAlta.setEnabled(false);
+                Toast.makeText(this,getResources().getString(R.string.toast_ok),
+                        Toast.LENGTH_SHORT).show();
+
+            }
 
         }
         else{
-            if(data.getExtras().getString("nombre").length()==0){
-                /*Toast.makeText(this,getResources().getString(R.string.comprado)+" "+
-                                ((Articulo) a.getItemAtPosition(position)).getNombre(),
-                        Toast.LENGTH_SHORT).show();*/
-            }
-            else{
-                /*Toast.makeText(context,getResources().getString(R.string.comprado)+" "+
-                                ((Articulo) a.getItemAtPosition(position)).getNombre(),
-                        Toast.LENGTH_SHORT).show();*/
-            }
+
+            Toast.makeText(this,getResources().getString(R.string.toast_cancel),
+                    Toast.LENGTH_SHORT).show();
         }
 
     }
