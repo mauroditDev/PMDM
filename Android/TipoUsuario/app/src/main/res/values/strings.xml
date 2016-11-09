@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TipoUsuario</string>
+    <string name="btn_imagen">Seleccionar</string>
+    <string name="btn_save">Guardar</string>
+    <string name="titulo">Editar perfil personal</string>
+    <string name="editar">Tipo de usuario</string>
+    <string name="seleccion">Descripción</string>
+    <string name="toast">Contacto guardado Correctamente</string>
+</resources>
