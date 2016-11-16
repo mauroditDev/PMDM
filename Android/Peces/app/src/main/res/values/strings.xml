@@ -2,4 +2,5 @@
     <string name="app_name">Peces</string>
     <string name="peces">Peces del Parque</string>
     <string name="invertebrados">Invertebrados del Parque</string>
+    <string name="spinner1">Peces</string>
 </resources>

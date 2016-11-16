@@ -9,17 +9,23 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.alumno.peces.MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@android:color/black">
 
     <Spinner android:id="@+id/spinner"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></Spinner>
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:backgroundTint="@android:color/white"
+        android:background="@android:color/white"></Spinner>
     <TextView
         android:id="@+id/titulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:text="@string/peces"/>
+        android:text="@string/peces"
+        android:layout_margin="3dp"
+        android:textColor="@android:color/white"/>
     <ListView
         android:id="@+id/lista"
         android:layout_width="match_parent"

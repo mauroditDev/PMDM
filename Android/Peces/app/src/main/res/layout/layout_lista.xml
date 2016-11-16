@@ -6,10 +6,13 @@
     <ImageView
         android:id="@+id/imagen_pez"
         android:layout_width="250dp"
-        android:layout_height="250dp" />
-    <ListView
+        android:layout_height="250dp"
+        android:layout_margin="4dp"/>
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="2dp">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -21,19 +24,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/nombre_cient"
+            android:textColor="@android:color/holo_blue_light"
             android:textStyle="italic"
             android:textSize="16sp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_blue_light"
             android:id="@+id/dimen"
             android:textSize="16sp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_blue_light"
             android:id="@+id/habitat"
             android:textSize="16sp"/>
 
-    </ListView>
+    </LinearLayout>
 
 </LinearLayout>
