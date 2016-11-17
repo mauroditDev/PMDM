@@ -12,20 +12,24 @@
     android:orientation="vertical"
     android:background="@android:color/black">
 
-    <Spinner android:id="@+id/spinner"
-        android:layout_width="wrap_content"
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
-        android:backgroundTint="@android:color/white"
-        android:background="@android:color/white"></Spinner>
+        android:foregroundTint="@android:color/white"/>
+
     <TextView
         android:id="@+id/titulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
+        android:textSize="25dp"
         android:text="@string/peces"
         android:layout_margin="3dp"
-        android:textColor="@android:color/white"/>
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="8dp"/>
+
     <ListView
         android:id="@+id/lista"
         android:layout_width="match_parent"

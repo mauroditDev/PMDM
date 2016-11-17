@@ -8,7 +8,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.alumno.peces.Imagen">
+    tools:context="com.example.alumno.peces.Imagen"
+    android:background="@android:color/black">
 
     <ImageView android:id="@+id/fotaco"
         android:layout_width="match_parent"

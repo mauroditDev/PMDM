@@ -15,7 +15,11 @@ import android.widget.TextView;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+
+import static java.nio.charset.StandardCharsets.ISO_8859_1;
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,22 +35,12 @@ public class MainActivity extends AppCompatActivity {
 
         final Spinner spinner = (Spinner) findViewById(R.id.spinner);
 
-        ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.itemizado,android.R.layout.simple_spinner_item);
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.itemizado,R.layout.spinner);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
 
-        String a = spinner.getSelectedItem().toString();
         textView = (TextView) findViewById(R.id.titulo);
-/*
-        if(a.equals(getResources().getString(R.string.spinner1))){
-            cargar(0);
-        }
-        else{
-            cargar(1);
-        }
-
-*/
 
         lista = (ListView) findViewById(R.id.lista);
 
@@ -70,29 +64,22 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-/*
-    public  void cargar(String string){
-        if(string.equals(getResources().getString(R.string.spinner1)))
-            cargar(0);
-        else {
-            cargar(1);
-            System.out.println("cargando el 1");
-        }
-    }
-*/
+
     public void cargar(int position){
         datos = new ArrayList<>();
         String linea;
         String[] cont;
         InputStream fraw;
+        BufferedReader brin;
         if(position == 0) {
             fraw =getResources().openRawResource(R.raw.peces);
+            brin = new BufferedReader(new InputStreamReader(fraw, UTF_8));
         }
         else{
             fraw =getResources().openRawResource(R.raw.algaseinvertebrados);
+            brin = new BufferedReader(new InputStreamReader(fraw, ISO_8859_1));
         }
-        BufferedReader brin =
-                new BufferedReader(new InputStreamReader(fraw));
+
         try{
 
             linea = brin.readLine();

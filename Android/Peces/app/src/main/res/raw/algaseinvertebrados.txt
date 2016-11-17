@@ -1,4 +1,4 @@
-anemona,Anemona común,anemonajpg,Anemonia sulcata,10,Fondo de roca
+anemona,Anémona común,anemonajpg,Anemonia sulcata,10,Fondo de roca
 bigaro,Bígaro,bigarojpg,Littorina litorea,2,Fondo de roca
 cangrejocorredor,Cangrejo corredor,cangrejocorredorjpg,Pachygrapsus marmoratus,10,Fondo de roca
 cangrejo,Cangrejo ermitaño,cangrejojpg,Dardanus arrosor,6,Fondo de roca
