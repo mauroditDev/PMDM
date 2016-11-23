@@ -21,7 +21,8 @@ import java.util.ArrayList;
 import static java.nio.charset.StandardCharsets.ISO_8859_1;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+        implements FragmentListado.ImagenListener{
 
     public ArrayList<Pez> datos;
     AdaptadorPez adaptadoPeces;
@@ -29,96 +30,33 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        datos = new ArrayList<>();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        FragmentListado frgListado =
+                (FragmentListado)getSupportFragmentManager()
+                        .findFragmentById(R.id.FrgListado);
 
-        ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.itemizado,R.layout.spinner);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-
-
-        textView = (TextView) findViewById(R.id.titulo);
-
-        lista = (ListView) findViewById(R.id.lista);
-
-        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-
-                imagen(position);
-
-            }
-        });
-
-        spinner.setOnItemSelectedListener(new Spinner.OnItemSelectedListener(){
-            public void onItemSelected(AdapterView<?> adapterView, View v, int position, long id){
-                cargar(position);
-                //adaptadoPeces.notifyDataSetChanged();
-            }
-            public void onNothingSelected(AdapterView<?> adapterView) {
-                //adaptadoPeces.notifyDataSetChanged();
-            }
-        });
-
+        frgListado.setImagenListener(this);
 
     }
 
-    public void cargar(int position){
-        datos = new ArrayList<>();
-        String linea;
-        String[] cont;
-        InputStream fraw;
-        BufferedReader brin;
-        if(position == 0) {
-            fraw =getResources().openRawResource(R.raw.peces);
-            brin = new BufferedReader(new InputStreamReader(fraw, UTF_8));
+    @Override
+    public void onItemSeleccionado(Pez pez) {
+        boolean hayDetalle =
+                (getSupportFragmentManager().findFragmentById(R.id.FrgDetalle) != null);
+        int img = getResources().getIdentifier("@drawable/"+pez.img,null,this.getPackageName());
+
+        if(hayDetalle) {
+            ((FragmentDetalle)getSupportFragmentManager()
+                    .findFragmentById(R.id.FrgDetalle)).mostrarDetalle(img);
         }
-        else{
-            fraw =getResources().openRawResource(R.raw.algaseinvertebrados);
-            brin = new BufferedReader(new InputStreamReader(fraw, ISO_8859_1));
+        else {
+            //TODO: resolver de donde sale esto!
+            imagen(2);
         }
-
-        try{
-
-            linea = brin.readLine();
-            while(linea!=null) {
-                cont = linea.split(",");
-                Pez nuevo = new Pez();
-                switch(position){
-                    case 0:
-                        nuevo.img = cont[0];
-                        nuevo.nombreCom = cont[1];
-                        nuevo.nombreCien = cont[2];
-                        nuevo.tamano = cont[3];
-                        nuevo.habitat = cont [4];
-                        break;
-
-                    case 1:
-                        nuevo.img = cont[0];
-                        nuevo.nombreCom = cont[1];
-                        nuevo.nombreCien = cont[3];
-                        nuevo.tamano = cont[4];
-                        nuevo.habitat = cont [5];
-                        textView.setText(getString(R.string.invertebrados));
-                        break;
-                }
-                datos.add(nuevo);
-                linea = brin.readLine();
-            };
-            brin.close();
-            fraw.close();
-
-            lista = (ListView) findViewById(R.id.lista);
-            adaptadoPeces = new AdaptadorPez(this,datos);
-            lista.setAdapter(adaptadoPeces);
-        }
-        catch (Exception e){
-            Log.v("error","he explotao...");
-        }
-
     }
+
 
     public void imagen(int position){
 
