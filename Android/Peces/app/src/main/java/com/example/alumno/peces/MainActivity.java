@@ -52,16 +52,15 @@ public class MainActivity extends AppCompatActivity
                     .findFragmentById(R.id.FrgDetalle)).mostrarDetalle(img);
         }
         else {
-            //TODO: resolver de donde sale esto!
-            imagen(2);
+            imagen(img);
         }
     }
 
 
-    public void imagen(int position){
+    public void imagen(int img){
 
         Intent i = new Intent(this, Imagen.class);
-        i.putExtra("imagen", datos.get(position).img);
+        i.putExtra("imagen",img);
         startActivityForResult(i, SECONDARY_ACTIVITY_TAG);
 
     }

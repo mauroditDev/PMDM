@@ -17,8 +17,7 @@ public class Imagen extends AppCompatActivity {
         data = this.getIntent();
 
         ImageView imageView = (ImageView) findViewById(R.id.fotaco);
-        int img = getResources().getIdentifier("@drawable/"+data.getExtras().getString("imagen"),
-                null,this.getPackageName());
+        int img = data.getExtras().getInt("imagen");
         imageView.setImageResource(img);
 
     }

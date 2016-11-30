@@ -1,6 +1,7 @@
 package com.example.alumno.peces;
 
 import android.app.Activity;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,8 +36,13 @@ public class AdaptadorPez extends ArrayAdapter<Pez> {
         ViewHolder holder;
         if (item == null) {
             LayoutInflater inflater = contexto.getLayoutInflater();
-            item = inflater.inflate(R.layout.layout_lista, null);
-
+            Display display = contexto.getWindowManager().getDefaultDisplay();
+            if(display.getWidth()<display.getHeight()) {
+                item = inflater.inflate(R.layout.layout_lista, null);
+            }
+            else{
+                item = inflater.inflate(R.layout.layout_lista_hori, null);
+            }
             holder = new ViewHolder();
             holder.nombre = (TextView) item.findViewById(R.id.nombre);
             holder.imagen = (ImageView) item.findViewById(R.id.imagen_pez);
