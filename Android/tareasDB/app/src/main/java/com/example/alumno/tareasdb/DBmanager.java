@@ -39,5 +39,18 @@ public class DBmanager {
         return res;
     }
 
+    public void updateTarea(Tarea tarea){
+        String sql = "UPDATE tareas SET categoria = '"+tarea.categoria+
+                "', titulo = '"+tarea.titulo+
+                "', descripcion = '"+tarea.descripcion+
+                "' WHERE _id = "+tarea._id;
+        db.execSQL(sql);
+    }
+
+    public void eliminarTarea(Tarea tarea) {
+        String sql = "DELETE FROM tareas"+
+                " WHERE _id = "+tarea._id;
+        db.execSQL(sql);
+    }
 }
 

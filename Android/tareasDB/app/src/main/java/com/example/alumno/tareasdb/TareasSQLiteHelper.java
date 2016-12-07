@@ -28,13 +28,13 @@ public class TareasSQLiteHelper extends SQLiteOpenHelper {
 
         db.execSQL("INSERT INTO tareas (categoria, titulo, descripcion)" +
                 " VALUES(" +
-                "'citas','Reunión con Miguel'," +
+                "'Cita / Reunión','Reunión con Miguel'," +
                 "'Reunión para la venta del jueves'" +
                 ")");
 
         db.execSQL("INSERT INTO tareas (categoria, titulo, descripcion)" +
                 " VALUES(" +
-                "'varios','Llamar a María'," +
+                "'Varios','Llamar a María'," +
                 "'El jueves empezó un trabajo'" +
                 ")");
 
