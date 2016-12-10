@@ -47,6 +47,12 @@ public class DBmanager {
         db.execSQL(sql);
     }
 
+    public void insertTarea(Tarea tarea){
+        String sql = "INSERT INTO tareas (categoria, titulo, descripcion) VALUES ("+
+                "'"+tarea.categoria+"','"+tarea.titulo+"','"+tarea.descripcion+"')";
+        db.execSQL(sql);
+    }
+
     public void eliminarTarea(Tarea tarea) {
         String sql = "DELETE FROM tareas"+
                 " WHERE _id = "+tarea._id;

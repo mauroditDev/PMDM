@@ -3,10 +3,10 @@ package com.example.alumno.tareasdb;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ContextMenu;
+import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,7 +21,8 @@ public class MainActivity extends AppCompatActivity {
     private ListView listadoPrincipal;
     private ArrayList<Tarea> datos = new ArrayList<>();
     private AdaptadorTarea adaptadorTarea;
-    private static final int SECONDARY_ACTIVITY_TAG = 1;
+    private static final int DETALLES_TAREA = 1;
+    private static final int NUEVA_TAREA = 2;
 
     private DBmanager dBmanager;
 
@@ -46,18 +47,51 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         if(resultCode == RESULT_OK) {
-            Tarea tar = new Tarea(data.getExtras().getInt("id"),data.getExtras().getString("tipo"),
-                    data.getExtras().getString("nombre"),data.getExtras().getString("descripcion"));
-            dBmanager.updateTarea(tar);
-            construirLista();
-
+            if(requestCode == DETALLES_TAREA) {
+                Tarea tar = new Tarea(data.getExtras().getInt("id"), data.getExtras().getString("tipo"),
+                        data.getExtras().getString("nombre"), data.getExtras().getString("descripcion"));
+                dBmanager.updateTarea(tar);
+                construirLista();
+            }
+            if(requestCode == NUEVA_TAREA){
+                Tarea tar = new Tarea(data.getExtras().getInt("id"), data.getExtras().getString("tipo"),
+                        data.getExtras().getString("nombre"), data.getExtras().getString("descripcion"));
+                dBmanager.insertTarea(tar);
+                construirLista();
+            }
         }
         else{
 
-            Toast.makeText(this, "Ha vuelto con un escape", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Cancelado", Toast.LENGTH_SHORT).show();
 
         }
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        final Activity actividad = this;
+
+        switch (item.getItemId()) {
+            case R.id.MenuAdd:
+                Intent i = new Intent(actividad, Detalles.class);
+                Tarea tar = new Tarea();
+                i.putExtra("nombre", tar.titulo);
+                i.putExtra("descripcion", tar.descripcion);
+                i.putExtra("tipo",tar.categoria);
+                i.putExtra("id",tar._id);
+                startActivityForResult(i, NUEVA_TAREA);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 
@@ -77,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
                 i.putExtra("descripcion", tar.descripcion);
                 i.putExtra("tipo",tar.categoria);
                 i.putExtra("id",tar._id);
-                startActivityForResult(i, SECONDARY_ACTIVITY_TAG);
+                startActivityForResult(i, DETALLES_TAREA);
             }
         });
 
@@ -118,6 +152,8 @@ public class MainActivity extends AppCompatActivity {
 
         if(item.getItemId()==R.id.borrar){
             dBmanager.eliminarTarea((Tarea)listadoPrincipal.getAdapter().getItem(info.position));
+            Toast.makeText(this, "Eliminado", Toast.LENGTH_SHORT).show();
+            construirLista();
         }
         return true;
     }

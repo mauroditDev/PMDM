@@ -10,6 +10,13 @@ public class Tarea {
     public String titulo;
     public String descripcion;
 
+    public Tarea(){
+        _id = -1;
+        categoria = "Varios";
+        titulo = "Nueva tarea";
+        descripcion = "";
+    }
+
     public Tarea(int id, String cat, String tit, String des){
         _id = id;
         categoria = cat;
