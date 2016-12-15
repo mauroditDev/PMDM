@@ -76,17 +76,16 @@ public class MainActivity extends AppCompatActivity {
                 Libro lib = (Libro)listadoPrincipal.getItemAtPosition(position);
                 if(lib.favorito == 1){
                     lib.favorito = 0;
-                    refrescarLista();
                     Toast.makeText(actividad, "Marcado como NO favorito", Toast.LENGTH_SHORT).show();
-
                 }
                 else {
                     lib.favorito = 1;
-                    refrescarLista();
                     Toast.makeText(actividad, "Marcado como favorito", Toast.LENGTH_SHORT).show();
                 }
+                adaptadorLibro.notifyDataSetChanged();
             }
         });
+
 
         registerForContextMenu(listadoPrincipal);
     }

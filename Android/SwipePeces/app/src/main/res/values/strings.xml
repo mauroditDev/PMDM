@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SwipePeces</string>
+    <string name="section_title_1">Peces</string>
+    <string name="section_title_2">Invertebrados</string>
+</resources>
