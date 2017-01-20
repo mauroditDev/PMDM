@@ -3,7 +3,9 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class BotonSalir : MonoBehaviour {
-    
+    public pulsarPantalla unP;
+    public pulsarPantalla dosP;
+
 	void Start()
     {
         Debug.Log(SceneManager.GetActiveScene().name);
@@ -23,11 +25,15 @@ public class BotonSalir : MonoBehaviour {
                 SceneManager.LoadScene(SceneManager.GetSceneByName("start").buildIndex);
             }
         }
-        if (SceneManager.GetActiveScene().name.Equals("start") && Input.GetButtonDown("Fire1"))
+        if (SceneManager.GetActiveScene().name.Equals("start") && unP.pulsado)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+            SceneManager.LoadScene(1);
             this.gameObject.GetComponent<Vidas>().resetVidas();
         }
-
+        if (SceneManager.GetActiveScene().name.Equals("start") && dosP.pulsado)
+        {
+            SceneManager.LoadScene(2);
+            this.gameObject.GetComponent<Vidas>().resetVidas();
+        }
     }
 }

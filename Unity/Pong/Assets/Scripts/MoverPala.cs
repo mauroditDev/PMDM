@@ -29,7 +29,7 @@ public class MoverPala : MonoBehaviour {
             }
             else
             {
-                movEnY = Input.GetAxis("Vertical");
+                movEnY = Input.GetAxis("Horizontal")*-1;
             }
         }
         

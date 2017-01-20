@@ -72,7 +72,9 @@
     <Compile Include="Assets\Scripts\MoverPala.cs" />
     <Compile Include="Assets\Scripts\SonidosBola.cs" />
     <Compile Include="Assets\Scripts\Vidas.cs" />
+    <Compile Include="Assets\Scripts\VidasDos.cs" />
     <Compile Include="Assets\Scripts\caida.cs" />
+    <Compile Include="Assets\Scripts\moverBolaDosP.cs" />
     <Compile Include="Assets\Scripts\pulsarPantalla.cs" />
   </ItemGroup>
   <ItemGroup>
