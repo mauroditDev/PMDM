@@ -66,9 +66,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Chiribitas.cs" />
+    <Compile Include="Assets\Scripts\CamFollow.cs" />
     <Compile Include="Assets\Scripts\MovPlayer.cs" />
-    <Compile Include="Assets\TileManager.cs" />
-    <Compile Include="Assets\TileScript.cs" />
+    <Compile Include="Assets\Scripts\TileManager.cs" />
+    <Compile Include="Assets\Scripts\TileScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
