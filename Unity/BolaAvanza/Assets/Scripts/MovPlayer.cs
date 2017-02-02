@@ -7,21 +7,26 @@ public class MovPlayer : MonoBehaviour {
     public float velocidadBola;
     private Vector3 dir;
     public bool juego;
+    private int record = 0;
     private int puntos;
-    public Text texto;
+    public Text texto_puntos;
+    public Text texto_scoreActual;
+    public Text texto_record;
     public GameObject wii;
+    public GameObject ui;
+    private AudioSource audS;
 
 	void Start () {
         TileManager.inicial = true;
         dir = new Vector3(0, 0);
         juego = true;
         puntos = 0;
-        
+        audS = (AudioSource)this.GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        texto.text = ""+puntos;
+        texto_puntos.text = ""+puntos;
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.LeftArrow) )
         {
             if (dir == new Vector3(-1, 0))
@@ -32,6 +37,22 @@ public class MovPlayer : MonoBehaviour {
             {
                 dir = new Vector3(-1, 0);
             }
+            if(this.GetComponent<Rigidbody>().isKinematic)
+            {
+                this.GetComponent<Rigidbody>().isKinematic = false;
+            }
+        }
+        if (!juego)
+        {
+            ui.SetActive(true);
+            if (puntos > record)
+                record = puntos;
+
+            texto_puntos.text = "";
+            texto_scoreActual.text = "" + puntos;
+            texto_record.text = "" + record;
+
+            //Destroy(this.gameObject);
         }
 
     /*    if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.RightArrow))
@@ -63,6 +84,7 @@ public class MovPlayer : MonoBehaviour {
             puntos += 30;
             Destroy(other.gameObject);
             Instantiate(wii, transform.position,Quaternion.identity);
+            audS.Play();
         }
         else
         {
@@ -71,6 +93,22 @@ public class MovPlayer : MonoBehaviour {
                 puntos++;
             }
         }
+    }
+
+    public void Restart()
+    {
+        this.GetComponent<Rigidbody>().isKinematic = true;
+        this.transform.position = new Vector3(0, 0, 0);
+        TileManager.inicial = true;
+        dir = new Vector3(0, 0);
+        juego = true;
+        puntos = 0;
+        ui.SetActive(false);
+    }
+
+    public void Salir()
+    {
+        Application.Quit();
     }
     
 }

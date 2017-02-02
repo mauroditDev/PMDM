@@ -83,4 +83,13 @@ public class TileManager : MonoBehaviour {
             TileManager.inicial = false;
         }
     }
+
+    public void Restart()
+    {
+        CurrentTile = (GameObject)Instantiate(TilePrefabs, new Vector3(-4f,-0.5f,3f), Quaternion.identity);
+        iniciar();
+    }
+
+    
+
 }
