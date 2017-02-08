@@ -5,9 +5,12 @@ public class PlayerCont : MonoBehaviour {
 
     private Animator animator;
     private SpriteRenderer spr;
+    private bool derecha;
+    public GameObject gameManager;
 
 	// Use this for initialization
 	void Start () {
+        derecha = true;
         animator = this.gameObject.GetComponent<Animator>();
         spr = this.gameObject.GetComponent<SpriteRenderer>();
 	}
@@ -20,10 +23,12 @@ public class PlayerCont : MonoBehaviour {
             animator.Play("WalkRt");
             if (Input.GetAxis("Horizontal") < 0)
             {
+                derecha = true;
                 spr.flipX = true;
             }
             else
             {
+                derecha = false;
                 spr.flipX = false;
             }
         }
@@ -32,6 +37,7 @@ public class PlayerCont : MonoBehaviour {
             if (Input.GetButton("Fire1"))
             {
                 animator.Play("Fire");
+                gameManager.GetComponent<GameManager>().disparar(derecha,transform.position.x,transform.position.y);
             }
             else
             {
@@ -55,4 +61,7 @@ public class PlayerCont : MonoBehaviour {
         
         
 	}
+
+    
+
 }
