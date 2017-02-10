@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\script\BestiaController.cs" />
+    <Compile Include="Assets\script\CameraController.cs" />
     <Compile Include="Assets\script\DemonController.cs" />
     <Compile Include="Assets\script\GameManager.cs" />
     <Compile Include="Assets\script\PlayerCont.cs" />
