@@ -71,6 +71,7 @@
     <Compile Include="Assets\script\DemonController.cs" />
     <Compile Include="Assets\script\GameManager.cs" />
     <Compile Include="Assets\script\PlayerCont.cs" />
+    <Compile Include="Assets\script\TileController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

@@ -6,6 +6,8 @@ public class BestiaController : MonoBehaviour {
     public int hits;
     private Animator animator;
     public bool muerto;
+    public bool izquierda;
+    public float velocidad;
 
 	// Use this for initialization
 	void Start () {
@@ -17,6 +19,15 @@ public class BestiaController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (izquierda) {
+            this.GetComponent<SpriteRenderer>().flipX = false;
+            transform.position += new Vector3(velocidad * (-1), 0);
+        }
+        else
+        {
+            this.GetComponent<SpriteRenderer>().flipX = true;
+            transform.position += new Vector3(velocidad * (-1), 0);
+        }
         if (!muerto)
         {
             animator.Play("Walk");
@@ -29,4 +40,21 @@ public class BestiaController : MonoBehaviour {
         }
 
 	}
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (!muerto)
+        {
+            Debug.Log(other.name);
+            if(other.name == "MC")
+            {
+                other.GetComponent<Rigidbody>().AddForce(Vector3.up * 200);
+                other.GetComponent<PlayerCont>().vidas--;
+            }
+        }
+        
+
+    }
+
+
 }
