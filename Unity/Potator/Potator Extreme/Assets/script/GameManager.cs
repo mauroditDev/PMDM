@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class GameManager : MonoBehaviour {
     public GameObject masterChief;
     public GameObject[] enemigos;
+    public LvlController[] niveles;
 	// Use this for initialization
 	void Start () {
 
@@ -52,5 +54,11 @@ public class GameManager : MonoBehaviour {
             
         }
     }
-    
+
+    public void nextLevel()
+    {
+        LvlController[] nivAux = new LvlController[niveles.Length];
+        niveles = new LvlController[niveles.Length + 1];
+
+    }
 }

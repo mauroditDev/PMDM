@@ -19,18 +19,19 @@ public class BestiaController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (izquierda) {
-            this.GetComponent<SpriteRenderer>().flipX = false;
-            transform.position += new Vector3(velocidad * (-1), 0);
-        }
-        else
-        {
-            this.GetComponent<SpriteRenderer>().flipX = true;
-            transform.position += new Vector3(velocidad * (-1), 0);
-        }
         if (!muerto)
         {
             animator.Play("Walk");
+            if (izquierda)
+            {
+                this.GetComponent<SpriteRenderer>().flipX = false;
+                transform.position += new Vector3(velocidad * (-1), 0);
+            }
+            else
+            {
+                this.GetComponent<SpriteRenderer>().flipX = true;
+                transform.position += new Vector3(velocidad, 0);
+            }
         }
         if(hits > 60)
         {
@@ -43,9 +44,9 @@ public class BestiaController : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
+       // Debug.Log(other.tag); Debug.Log(other.name);
         if (!muerto)
         {
-            Debug.Log(other.name);
             if(other.name == "MC")
             {
                 other.GetComponent<Rigidbody>().AddForce(Vector3.up * 200);
@@ -56,5 +57,14 @@ public class BestiaController : MonoBehaviour {
 
     }
 
+    void OnTriggerExit(Collider other)
+    {
+        Debug.Log(other.tag); Debug.Log(other.name);
+        if (other.tag == "Suelo")
+        {
+            izquierda = !izquierda;
+            Debug.Log(izquierda);
+        }
+    }
 
 }

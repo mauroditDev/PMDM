@@ -14,6 +14,7 @@ public class PlayerCont : MonoBehaviour {
     public float tolerancia;
     public float lastY;
     public int vidas;
+    public bool inmortal;
 
 	// Use this for initialization
 	void Start () {
@@ -89,13 +90,23 @@ public class PlayerCont : MonoBehaviour {
                     }
                 }
             }
+            
+            
+        }
+        else
+        {
+            animator.Play("Boom");
+            if (!inmortal)
+            {
+                this.transform.GetChild(0).SetParent(null);
+                Destroy(this.gameObject, 1.385f);
+            }
             else
             {
-                animator.Play("BOOM");
+                vidas = 5;
             }
             
         }
-
         Vector3 fuerza = new Vector3(1f, 0) * Input.GetAxis("Horizontal") * velocidad * Time.deltaTime;
         //Debug.Log(fuerza);
         transform.position += fuerza;

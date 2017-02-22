@@ -18,13 +18,6 @@ public class TileController : MonoBehaviour {
         {
             other.GetComponent<PlayerCont>().suelo = true;
         }
-            
-
-        if (other.tag == "Bestia")
-        {
-           // other.GetComponent<BestiaController>().izquierda = !(other.GetComponent<BestiaController>().izquierda);
-            Debug.Log("BESTIA");
-        }
 
     }
 
@@ -32,14 +25,6 @@ public class TileController : MonoBehaviour {
     {
         if (other.name == "MC")
             other.GetComponent<PlayerCont>().suelo = false;
-
-        if (other.name == "MaloAvanza")
-        {
-            Debug.Log("BESTIA");
-            other.GetComponent<BestiaController>().izquierda = !(other.GetComponent<BestiaController>().izquierda);
-            
-        }
-           
 
     }
 
