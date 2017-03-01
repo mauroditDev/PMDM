@@ -16,33 +16,19 @@ public class PlayerCont : MonoBehaviour {
     public int vidas;
     public bool inmortal;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start() {
         derecha = true;
         animator = this.gameObject.GetComponent<Animator>();
         spr = this.gameObject.GetComponent<SpriteRenderer>();
         suelo = true;
         rb = this.gameObject.GetComponent<Rigidbody>();
         vidas = 5;
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update() {
         if (vidas > 0) {
-            // Debug.Log(this.transform.position.y);
-            /*
-             if(this.transform.position.y-lastY > (tolerancia*(-1)) && this.transform.position.y - lastY < tolerancia)
-             {
-                 suelo = true;
-                 Debug.Log("puto suelo");
-             }
-             else
-             {
-                 suelo = false;
-             }
-             */
-
-
 
             if (suelo)
             {
@@ -90,8 +76,8 @@ public class PlayerCont : MonoBehaviour {
                     }
                 }
             }
-            
-            
+
+
         }
         else
         {
@@ -99,21 +85,37 @@ public class PlayerCont : MonoBehaviour {
             if (!inmortal)
             {
                 this.transform.GetChild(0).SetParent(null);
-                Destroy(this.gameObject, 1.385f);
+                Destroy(this.gameObject, 0.385f);
             }
             else
             {
                 vidas = 5;
             }
-            
+
         }
         Vector3 fuerza = new Vector3(1f, 0) * Input.GetAxis("Horizontal") * velocidad * Time.deltaTime;
         //Debug.Log(fuerza);
         transform.position += fuerza;
-        
-        lastY = this.transform.position.y;
-	}
 
-    
+        if (lastY < this.transform.position.y)
+        {
+            lastY = this.transform.position.y;
+        }
+        else
+        {
+            if (lastY - this.transform.position.y > 6)
+            {
+                vidas = 0;
+            }
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "vida")
+        {
+            vidas = 5;
+        }
+    }
 
 }
