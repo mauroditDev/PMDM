@@ -1,14 +1,23 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 using System;
 
 public class GameManager : MonoBehaviour {
     public GameObject masterChief;
-    public GameObject[] enemigos;
+    public List<GameObject> enemigos;
     public LvlController[] niveles;
 	// Use this for initialization
 	void Start () {
-
+        niveles = new LvlController[3];
+        int i = 0;
+        foreach (LvlController niv in niveles)
+        {
+            niveles[i] = new LvlController();
+            niveles[i].gm = this;
+            niveles[i].generarNivel(i);
+            i++;
+        }
+        
 	}
 	
 	// Update is called once per frame
@@ -61,4 +70,5 @@ public class GameManager : MonoBehaviour {
         niveles = new LvlController[niveles.Length + 1];
 
     }
+    
 }
