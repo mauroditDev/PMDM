@@ -59,11 +59,10 @@ public class BestiaController : MonoBehaviour {
 
     void OnTriggerExit(Collider other)
     {
-        Debug.Log(other.tag); Debug.Log(other.name);
+        //Debug.Log(other.tag); Debug.Log(other.name);
         if (other.tag == "Suelo")
         {
             izquierda = !izquierda;
-            Debug.Log(izquierda);
         }
     }
 

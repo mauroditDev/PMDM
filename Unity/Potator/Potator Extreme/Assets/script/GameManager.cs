@@ -6,24 +6,28 @@ public class GameManager : MonoBehaviour {
     public GameObject masterChief;
     public List<GameObject> enemigos;
     public LvlController[] niveles;
+    private int nivelMax;
 	// Use this for initialization
 	void Start () {
         niveles = new LvlController[3];
-        int i = 0;
+        nivelMax = 0;
         foreach (LvlController niv in niveles)
         {
-            niveles[i] = new LvlController();
-            niveles[i].gm = this;
-            niveles[i].generarNivel(i);
-            i++;
+            niveles[nivelMax] = new LvlController();
+            niveles[nivelMax].gm = this;
+            Debug.Log("el gm del nivel " + nivelMax + " es = " + niveles[nivelMax].gm.name);
+            niveles[nivelMax] = niveles[nivelMax].generarNivel(nivelMax);
+            nivelMax++;
+            Debug.Log(nivelMax);
         }
         
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
+       
+
+    }
 
     public void disparar(bool derecha, float posX, float posY)
     {
@@ -64,10 +68,24 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+   
     public void nextLevel()
     {
-        LvlController[] nivAux = new LvlController[niveles.Length];
-        niveles = new LvlController[niveles.Length + 1];
+        LvlController[] nivAux = niveles;
+        niveles = new LvlController[niveles.Length];
+        for(int i = 0; i< niveles.Length; i++)
+        {
+            if (i < niveles.Length - 1)
+            {
+                niveles[i] = nivAux[i + 1];
+            }
+            else
+            {
+                niveles[i] = new LvlController();
+                niveles[i].gm = this;
+                niveles[i].generarNivel(nivelMax++);
+            }
+        }
 
     }
     
