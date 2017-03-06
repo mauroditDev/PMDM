@@ -53,6 +53,7 @@
      <Compile Include="Assets\script\GameManager.cs" />
      <Compile Include="Assets\script\LvlController.cs" />
      <Compile Include="Assets\script\PlayerCont.cs" />
+     <Compile Include="Assets\script\SceneLoader.cs" />
      <Compile Include="Assets\script\TileController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

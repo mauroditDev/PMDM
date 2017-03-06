@@ -21,6 +21,11 @@ public class SceneLoader : MonoBehaviour {
         SceneManager.LoadScene(1);
     }
 
+    public void salir()
+    {
+        Application.Quit();
+    }
+
     public void restart()
     {
         SceneManager.LoadScene(0);

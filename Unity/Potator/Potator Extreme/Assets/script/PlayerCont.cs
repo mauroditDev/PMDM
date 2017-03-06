@@ -147,10 +147,10 @@ public class PlayerCont : MonoBehaviour {
                 break;
             case 30:
             case 20:
-                texto.color = new Color(204, 204, 0);
+                texto.color = Color.yellow;
                 break;
             default:
-                texto.color = new Color(54, 204, 0);
+                texto.color = Color.green;
                 break;
         }
         if(shields == 0)

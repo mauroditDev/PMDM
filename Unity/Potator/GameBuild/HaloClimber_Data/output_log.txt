@@ -1,0 +1,133 @@
+Initialize engine version: 5.5.2f1 (3829d7f588f3)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 10.1]
+    Renderer: Intel(R) HD Graphics 3000 (ID=0x116)
+    Vendor:   Intel
+    VRAM:     848 MB
+    Driver:   9.17.10.4229
+Begin MonoManager ReloadAssembly
+Platform assembly: F:\DAM2\PMDM_2\PMDM_2\PMDM\Unity\Potator\GameBuild\HaloClimber_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading F:\DAM2\PMDM_2\PMDM_2\PMDM\Unity\Potator\GameBuild\HaloClimber_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: F:\DAM2\PMDM_2\PMDM_2\PMDM\Unity\Potator\GameBuild\HaloClimber_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading F:\DAM2\PMDM_2\PMDM_2\PMDM\Unity\Potator\GameBuild\HaloClimber_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: F:\DAM2\PMDM_2\PMDM_2\PMDM\Unity\Potator\GameBuild\HaloClimber_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading F:\DAM2\PMDM_2\PMDM_2\PMDM\Unity\Potator\GameBuild\HaloClimber_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: F:\DAM2\PMDM_2\PMDM_2\PMDM\Unity\Potator\GameBuild\HaloClimber_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading F:\DAM2\PMDM_2\PMDM_2\PMDM\Unity\Potator\GameBuild\HaloClimber_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: F:\DAM2\PMDM_2\PMDM_2\PMDM\Unity\Potator\GameBuild\HaloClimber_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading F:\DAM2\PMDM_2\PMDM_2\PMDM\Unity\Potator\GameBuild\HaloClimber_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: F:\DAM2\PMDM_2\PMDM_2\PMDM\Unity\Potator\GameBuild\HaloClimber_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading F:\DAM2\PMDM_2\PMDM_2\PMDM\Unity\Potator\GameBuild\HaloClimber_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: F:\DAM2\PMDM_2\PMDM_2\PMDM\Unity\Potator\GameBuild\HaloClimber_Data\Managed\UnityEngine.VR.dll (this message is harmless)
+Loading F:\DAM2\PMDM_2\PMDM_2\PMDM\Unity\Potator\GameBuild\HaloClimber_Data\Managed\UnityEngine.VR.dll into Unity Child Domain
+- Completed reload, in  0.271 seconds
+Platform assembly: F:\DAM2\PMDM_2\PMDM_2\PMDM\Unity\Potator\GameBuild\HaloClimber_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: F:\DAM2\PMDM_2\PMDM_2\PMDM\Unity\Potator\GameBuild\HaloClimber_Data\Managed\System.dll (this message is harmless)
+desktop: 1366x768 59Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 2.260147 ms
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 1f90 -> priority: 1 
+Click!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 7.402931 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 330.
+Total: 0.275323 ms (FindLiveObjects: 0.038375 ms CreateObjectMapping: 0.033020 ms MarkObjects: 0.193663 ms  DeleteObjects: 0.009370 ms)
+
+nombre:lvl_02
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+nombre:lvl_01
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+nombre:lvl_02
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+0 = 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+1 = 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+2 = 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+nombre:lvl_03
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+3 = 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.066038 ms
+
+Unloading 677 unused Assets to reduce memory usage. Loaded Objects now: 269.
+Total: 0.592145 ms (FindLiveObjects: 0.033020 ms CreateObjectMapping: 0.051316 ms MarkObjects: 0.178937 ms  DeleteObjects: 0.328424 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.425255 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 296.
+Total: 0.292279 ms (FindLiveObjects: 0.041945 ms CreateObjectMapping: 0.053101 ms MarkObjects: 0.187415 ms  DeleteObjects: 0.008924 ms)
+
+Click!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.719320 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 333.
+Total: 0.213297 ms (FindLiveObjects: 0.017849 ms CreateObjectMapping: 0.021418 ms MarkObjects: 0.165550 ms  DeleteObjects: 0.008032 ms)
+
+nombre:lvl_01
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+nombre:lvl_03
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+nombre:lvl_03
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+0 = 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+1 = 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+2 = 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.663540 ms
+
+Unloading 514 unused Assets to reduce memory usage. Loaded Objects now: 269.
+Total: 0.643907 ms (FindLiveObjects: 0.062918 ms CreateObjectMapping: 0.061579 ms MarkObjects: 0.190093 ms  DeleteObjects: 0.327977 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.398482 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 296.
+Total: 0.236054 ms (FindLiveObjects: 0.017849 ms CreateObjectMapping: 0.018295 ms MarkObjects: 0.189200 ms  DeleteObjects: 0.010263 ms)
+

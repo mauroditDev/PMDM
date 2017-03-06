@@ -5,20 +5,13 @@ using System;
 public class GameManager : MonoBehaviour {
     public GameObject masterChief;
     public List<GameObject> enemigos;
-    public LvlController[] niveles;
+    public List<GameObject> niveles;
     private int nivelMax;
 	// Use this for initialization
 	void Start () {
-        niveles = new LvlController[3];
-        nivelMax = 0;
-        foreach (LvlController niv in niveles)
+        for (nivelMax = 0; nivelMax<3;nivelMax++)
         {
-            niveles[nivelMax] = new LvlController();
-            niveles[nivelMax].gm = this;
-            Debug.Log("el gm del nivel " + nivelMax + " es = " + niveles[nivelMax].gm.name);
-            niveles[nivelMax] = niveles[nivelMax].generarNivel(nivelMax);
-            nivelMax++;
-            Debug.Log(nivelMax);
+            niveles.Add(LvlController.generarNivel(nivelMax,this));
         }
         
 	}
@@ -71,7 +64,9 @@ public class GameManager : MonoBehaviour {
    
     public void nextLevel()
     {
-        LvlController[] nivAux = niveles;
+        niveles.RemoveAt(0);
+        niveles.Add(LvlController.generarNivel(nivelMax++, this));
+        /*
         niveles = new LvlController[niveles.Length];
         for(int i = 0; i< niveles.Length; i++)
         {
@@ -83,10 +78,11 @@ public class GameManager : MonoBehaviour {
             {
                 niveles[i] = new LvlController();
                 niveles[i].gm = this;
-                niveles[i].generarNivel(nivelMax++);
+                niveles[i] = niveles[i].generarNivel(nivelMax++);
+                niveles[i].orden = i;
             }
         }
-
+        */
     }
     
 }
