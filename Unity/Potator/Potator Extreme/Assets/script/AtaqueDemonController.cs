@@ -33,7 +33,7 @@ public class AtaqueDemonController : MonoBehaviour {
             if (other.name == "MC")
             {
                 other.GetComponent<Rigidbody>().AddForce(Vector3.up * 75);
-                other.GetComponent<PlayerCont>().vidas--;
+                other.GetComponent<PlayerCont>().actualizarVidas(-1);
             }
         }
 
